@@ -1,0 +1,8 @@
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\bin\Debug\bravoTaskAPi.exe.config
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\bin\Debug\bravoTaskAPi.exe
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\bin\Debug\bravoTaskAPi.pdb
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\obj\Debug\bravoTaskAPi.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\obj\Debug\bravoTaskAPi.csproj.SuggestedBindingRedirects.cache
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\obj\Debug\bravoTaskAPi.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\obj\Debug\bravoTaskAPi.exe
+C:\Users\dell\Desktop\bravoTaskAPi\bravoTaskAPi\obj\Debug\bravoTaskAPi.pdb

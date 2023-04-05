@@ -1,0 +1,1078 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExcelFile.net</name>
+    </assembly>
+    <members>
+        <member name="T:ExcelFile.net.Enumerable.EnumerableCell">
+            <summary>
+                Enumerable cells
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableCell.#ctor(NPOI.SS.UserModel.IRow)">
+            <summary>
+                Construct an enumerable cells from a row object
+            </summary>
+            <param name="row">the row object</param>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableCell.GetEnumerator">
+            <summary>
+                The implementment of IEnumerable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.Enumerable.EnumerableRow">
+            <summary>
+                Enumerable rows
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableRow.#ctor(NPOI.SS.UserModel.ISheet)">
+            <summary>
+                Construct an enumerable rows from a sheet object
+            </summary>
+            <param name="sheet">the sheet object</param>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableRow.GetEnumerator">
+            <summary>
+                The implementment of IEnumerable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.Enumerable.EnumerableSheet">
+            <summary>
+                Enumerable sheets
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableSheet.#ctor(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+                Construct an enumerable sheets from a workbook object
+            </summary>
+            <param name="workbook">the workbook object</param>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.EnumerableSheet.GetEnumerator">
+            <summary>
+                The implementment of IEnumerable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.Enumerable.ExcelExtension">
+            <summary>
+                Some extension methods that create enumerable sheets, rows or cells
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.ExcelExtension.AsEnumerable(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+                Create enumerable sheets from a workbook object
+            </summary>
+            <param name="workbook">the workbook object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.ExcelExtension.AsEnumerable(NPOI.SS.UserModel.ISheet)">
+            <summary>
+                Create enumerable rows from a sheet object
+            </summary>
+            <param name="sheet">the sheet object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.Enumerable.ExcelExtension.AsEnumerable(NPOI.SS.UserModel.IRow)">
+            <summary>
+                Create enumerable cells from a row object
+            </summary>
+            <param name="row">the row object</param>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.ExcelDataException">
+            <summary>
+                Excel data exception class
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelDataException.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Cosntruct an ExcelDataException object
+            </summary>
+            <param name="rowIndex">the row index of the errored cell</param>
+            <param name="columnIndex">the column index of the errored cell</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelDataException.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+                Cosntruct an ExcelDataException object
+            </summary>
+            <param name="message">the error message</param>
+            <param name="rowIndex">the row index of the errored cell</param>
+            <param name="columnIndex">the column index of the errored cell</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelDataException.#ctor(System.String,System.Exception,System.Int32,System.Int32)">
+            <summary>
+                Cosntruct an ExcelDataException object
+            </summary>
+            <param name="message">the error message</param>
+            <param name="innerException">the inner exception</param>
+            <param name="rowIndex">the row index of the errored cell</param>
+            <param name="columnIndex">the column index of the errored cell</param>
+        </member>
+        <member name="P:ExcelFile.net.ExcelDataException.RowIndex">
+            <summary>
+                The Row index of the errored cell
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.ExcelDataException.ColumnIndex">
+            <summary>
+                The column index of the errored cell
+            </summary>
+        </member>
+        <member name="T:ExcelFile.net.IExcelStyle">
+            <summary>
+                <para>
+                    Background: Background
+                </para>
+                <para>
+                    Border and the color of border: Border, BorderTop, BorderBottom, BorderLeft, BorderRight
+                </para>
+                <para>
+                    Align: Align, VerticalAlign
+                </para>
+                <para>
+                    Word: WrapText, Italic, Underline, FontSize, Font, Color, Bold
+                </para>
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelStyle.Style">
+            <summary>
+                Get style of cell
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Background(System.Int16)">
+            <summary>
+                Background
+            </summary>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.BorderTop(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderTop
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.BorderBottom(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderBottom
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.BorderLeft(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderLeft
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.BorderRight(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderRight
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Border(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                Border
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Align(NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+                Align
+            </summary>
+            <param name="alignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.VerticalAlign(NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+                VerticalAlign
+            </summary>
+            <param name="alignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.WrapText(System.Boolean)">
+            <summary>
+                WrapText
+            </summary>
+            <param name="wrapText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Color(System.Int16)">
+            <summary>
+                Color
+            </summary>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Italic">
+            <summary>
+                Italic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Underline(NPOI.SS.UserModel.FontUnderlineType)">
+            <summary>
+                Underline
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.FontSize(System.Double)">
+            <summary>
+                FontSize
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Font(System.String)">
+            <summary>
+                Font
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelStyle.Bold">
+            <summary>
+                Bold
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.ExcelStyle">
+            <summary>
+                <para>
+                    Background: Background
+                </para>
+                <para>
+                    Border and the color of border: Border, BorderTop, BorderBottom, BorderLeft, BorderRight
+                </para>
+                <para>
+                    Align: Align, VerticalAlign
+                </para>
+                <para>
+                    Word: WrapText, Italic, Underline, FontSize, Font, Color, Bold
+                </para>
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.#ctor(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.IFont)">
+            <summary>
+                Construct an ExcelStyle object
+            </summary>
+            <param name="style"></param>
+            <param name="font"></param>
+        </member>
+        <member name="P:ExcelFile.net.ExcelStyle.Style">
+            <summary>
+                Construct an ExcelStyle object
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Background(System.Int16)">
+            <summary>
+                Background
+            </summary>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.BorderTop(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderTop
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.BorderBottom(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderBottom
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.BorderLeft(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderLeft
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.BorderRight(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                BorderRight
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Border(NPOI.SS.UserModel.BorderStyle,System.Int16)">
+            <summary>
+                Border
+            </summary>
+            <param name="borderStyle"></param>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Align(NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+                Align
+            </summary>
+            <param name="alignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.VerticalAlign(NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+                VerticalAlign
+            </summary>
+            <param name="alignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.WrapText(System.Boolean)">
+            <summary>
+                WrapText
+            </summary>
+            <param name="wrapText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Color(System.Int16)">
+            <summary>
+                Color
+            </summary>
+            <param name="HSSFColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Italic">
+            <summary>
+                Italic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Underline(NPOI.SS.UserModel.FontUnderlineType)">
+            <summary>
+                Underline
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.FontSize(System.Double)">
+            <summary>
+                FontSize
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Font(System.String)">
+            <summary>
+                Font
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelStyle.Bold">
+            <summary>
+                Bold
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ExcelFile.net.IExcelFile">
+            <summary>
+                <para>
+                    Content: Sheet(), Row(), Cell(), Empty()
+                </para>
+                <para>
+                    Style of cell: Style, NewStyle(), Cell()、Row()
+                </para>
+                <para>
+                    Style of column: Sheet()
+                </para>
+                <para>
+                    Style of row: DefaultRowHeight(), Row()
+                </para>
+                <para>
+                    I/O: Save()
+                </para>
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelFile.Style">
+            <summary>
+                Default style
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.NewStyle">
+            <summary>
+                New style
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Sheet(System.Int32[])">
+            <summary>
+                New worksheet
+            </summary>
+            <param name="columnWidths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Sheet(System.String,System.Int32[])">
+            <summary>
+                New worksheet
+            </summary>
+            <param name="name"></param>
+            <param name="widths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.DefaultRowHeight(System.Int32)">
+            <summary>
+                Default row height
+            </summary>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Row(ExcelFile.net.ExcelStyle)">
+            <summary>
+                New row
+            </summary>
+            <param name="rowStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Row(System.Int16,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New row
+            </summary>
+            <param name="height"></param>
+            <param name="rowStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Empty(System.Int32)">
+            <summary>
+                New empty cell
+            </summary>
+            <param name="colspan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.String,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.String,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.Double,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.Double,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.Boolean,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.Boolean,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.DateTime,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Cell(System.DateTime,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Save(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Save(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelFile.Save(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="T:ExcelFile.net.ExcelFile">
+            <summary>
+                <para>
+                    Content: Sheet(), Row(), Cell(), Empty()
+                </para>
+                <para>
+                    Style of cell: Style, NewStyle(), Cell()、Row()
+                </para>
+                <para>
+                    Style of column: Sheet()
+                </para>
+                <para>
+                    Style of row: DefaultRowHeight(), Row()
+                </para>
+                <para>
+                    I/O: Save()
+                </para>
+            </summary>
+        </member>
+        <member name="F:ExcelFile.net.ExcelFile.Workbook">
+            <summary>
+                Current workbook
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.#ctor(System.Boolean)">
+            <summary>
+                Construct an new ExcelFile object
+            </summary>
+            <param name="is2007OrLater"></param>
+        </member>
+        <member name="P:ExcelFile.net.ExcelFile.Style">
+            <summary>
+                Default style
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.NewStyle">
+            <summary>
+                New style
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Sheet(System.Int32[])">
+            <summary>
+                New worksheet
+            </summary>
+            <param name="columnWidths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Sheet(System.String,System.Int32[])">
+            <summary>
+                New worksheet
+            </summary>
+            <param name="name"></param>
+            <param name="widths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.DefaultRowHeight(System.Int32)">
+            <summary>
+                Default row height
+            </summary>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Row(ExcelFile.net.ExcelStyle)">
+            <summary>
+                New row
+            </summary>
+            <param name="rowStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Row(System.Int16,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New row
+            </summary>
+            <param name="height"></param>
+            <param name="rowStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Empty(System.Int32)">
+            <summary>
+                New empty cell
+            </summary>
+            <param name="colspan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.String,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.String,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.Double,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.Double,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.Boolean,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.Boolean,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.DateTime,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Cell(System.DateTime,System.Int32,System.Int32,ExcelFile.net.ExcelStyle)">
+            <summary>
+                New cell
+            </summary>
+            <param name="value"></param>
+            <param name="rowspan"></param>
+            <param name="colspan"></param>
+            <param name="cellStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Save(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Save(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelFile.Save(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="T:ExcelFile.net.IExcelEditor">
+            <summary>
+                An interface to render an Excel template with data
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelEditor.StartMark">
+            <summary>
+                Start mark of a template variable
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelEditor.EndMark">
+            <summary>
+                End mark of a template variable
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelEditor.Separator">
+            <summary>
+                Separator between a template variable name and its property or field 
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.IExcelEditor.WarningMessages">
+            <summary>
+                Warning messages created when rendering the template
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Set(System.String,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Set(System.String,System.Double,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+            <param name="format">the format of the value</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Set(System.String,System.Boolean)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Set(System.String,System.DateTime,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+            <param name="format">the format of the value</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Set``1(System.String,System.Collections.Generic.IList{``0},System.Boolean,System.Type)">
+            <summary>
+                Set the values of cells, the result is multiple rows
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="values">the values of the cell</param>
+            <param name="willCopyRow">if it is true, the rows created by copy from the template row, or just create a new blank row</param>
+            <param name="type">the type iof T</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Save(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Save(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.Save(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.UpdateFormula">
+            <summary>
+                Update all cell value if it is a formula
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.SaveAsync(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.SaveAsync(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.IExcelEditor.SaveAsync(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="T:ExcelFile.net.ExcelEditor">
+            <summary>
+                An class to render an Excel template with data
+            </summary>
+        </member>
+        <member name="F:ExcelFile.net.ExcelEditor.Workbook">
+            <summary>
+                Current workbook
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+                Construct an ExcelEditor object
+            </summary>
+            <param name="file">the file path</param>
+            <param name="is2007OrLater">whether the format of the excel file is 2007 or later</param>
+            <param name="willJudgeByExtensionName">whether the format of the excel file will be judged by its extension name</param>
+        </member>
+        <member name="P:ExcelFile.net.ExcelEditor.StartMark">
+            <summary>
+                Start mark of a template variable
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.ExcelEditor.EndMark">
+            <summary>
+                End mark of a template variable
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.ExcelEditor.Separator">
+            <summary>
+                Separator between a template variable name and its property or field 
+            </summary>
+        </member>
+        <member name="P:ExcelFile.net.ExcelEditor.WarningMessages">
+            <summary>
+                Warning messages created when rendering the template
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Set(System.String,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Set(System.String,System.Double,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+            <param name="format">the format of the value</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Set(System.String,System.Boolean)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Set(System.String,System.DateTime,System.String)">
+            <summary>
+                Set the value of a cell
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="value">the value of the cell</param>
+            <param name="format">the format of the value</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Set``1(System.String,System.Collections.Generic.IList{``0},System.Boolean,System.Type)">
+            <summary>
+                Set the values of cells, the result is multiple rows
+            </summary>
+            <param name="name">the name of the cell</param>
+            <param name="values">the values of the cell</param>
+            <param name="willCopyRow">if it is true, the rows created by copy from the template row, or just create a new blank row</param>
+            <param name="type">the type iof T</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.GetPlaceHolderName(System.String)">
+            <summary>
+                "VariableA"->"{VariableA}"
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Combine(System.String,System.String)">
+            <summary>
+                "ClassA"、"MemberB"->"ClassA-MemberB"
+            </summary>
+            <param name="name"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.GetStartOfPlaceHolderName(System.String)">
+            <summary>
+                "ClassA"->"{ClassA-"
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Save(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Save(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.Save(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.UpdateFormula">
+            <summary>
+                Update all cell value if it is a formula
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.SaveAsync(System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.SaveAsync(System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="filePath">the target file path</param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelEditor.SaveAsync(System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response">the HTTP response</param>
+            <param name="fileName">the file name</param>
+        </member>
+        <member name="T:ExcelFile.net.ExcelUtils">
+            <summary>
+                I/O operations for Excel file
+            </summary>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.New(System.String,System.IO.FileMode,System.IO.FileAccess,System.Boolean,System.Boolean)">
+            <summary>
+                Read an excel file
+            </summary>
+            <param name="file"></param>
+            <param name="fileMode"></param>
+            <param name="fileAccess"></param>
+            <param name="is2007OrLater"></param>
+            <param name="willJudgeByExtensionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.New(System.Boolean)">
+            <summary>
+                Create a new Excel workbook
+            </summary>
+            <param name="is2007OrLater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.New(System.IO.Stream,System.Boolean)">
+            <summary>
+                Read Excel workbook from a stream
+            </summary>
+            <param name="stream"></param>
+            <param name="is2007OrLater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.Save(NPOI.SS.UserModel.IWorkbook,System.Web.HttpResponse,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response"></param>
+            <param name="fileName">with extension name</param>
+            <param name="workbook"></param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.Save(NPOI.SS.UserModel.IWorkbook,System.String)">
+            <summary>
+                Save the file as a local file
+            </summary>
+            <param name="file">with extension name</param>
+            <param name="workbook"></param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.Save(NPOI.SS.UserModel.IWorkbook,System.Web.HttpResponseBase,System.String)">
+            <summary>
+                Download the Excel file, for asp.net MVC, can use `return new EmptyResult();` as the response.
+            </summary>
+            <param name="response"></param>
+            <param name="fileName">with extension name</param>
+            <param name="workbook"></param>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.GetString(NPOI.SS.UserModel.ICell)">
+            <summary>
+                Get string value from a cell
+            </summary>
+            <param name="cell"></param>
+            <returns></returns>
+            <exception cref="T:ExcelFile.net.ExcelDataException"></exception>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.GetNumber(NPOI.SS.UserModel.ICell)">
+            <summary>
+                Get a number value from a cell
+            </summary>
+            <param name="cell"></param>
+            <returns></returns>
+            <exception cref="T:ExcelFile.net.ExcelDataException"></exception>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.GetBoolean(NPOI.SS.UserModel.ICell)">
+            <summary>
+                Get a boolean value from a cell
+            </summary>
+            <param name="cell"></param>
+            <returns></returns>
+            <exception cref="T:ExcelFile.net.ExcelDataException"></exception>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.GetDate(NPOI.SS.UserModel.ICell)">
+            <summary>
+                Get a date value from a cell
+            </summary>
+            <param name="cell"></param>
+            <returns></returns>
+            <exception cref="T:ExcelFile.net.ExcelDataException"></exception>
+        </member>
+        <member name="M:ExcelFile.net.ExcelUtils.GetFormulaEvaluator(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+                Get FormulaEvaluator from a workbook
+            </summary>
+            <param name="workbook"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
